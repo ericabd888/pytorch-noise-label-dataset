@@ -1,8 +1,8 @@
 from setuptools import setup
 
 setup(
-    name='noise_label_pkg',
-    version='0.1.0',    
+    name='NoiseLabelDataset',
+    version='0.1.1',    
     description='Support Pytorch Dataset to create Noise Label Dataset to train',
     url='https://github.com/ericabd888/NoiseLabelDataset',
     author='YUAN-CHIH YANG',
