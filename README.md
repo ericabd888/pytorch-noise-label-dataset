@@ -5,9 +5,9 @@ pip install git+https://github.com/ericabd888/pytorch-noise-label-dataset.git
 ```
 ## OutLook
 * Normal Dataset
-![](https://i.imgur.com/DAIwzeU.png =350x)
+![](https://i.imgur.com/DAIwzeU.png)
 * Noise Dataset
-![](https://i.imgur.com/RsDw9Gn.png =350x)
+![](https://i.imgur.com/RsDw9Gn.png)
 ## Package Support
 1. NoiseLabelDataset (Create Pytorch Dataset in Partial Noise Label)
 2. train_test_split (Random split data in Train, Validation(if you need), Test)
