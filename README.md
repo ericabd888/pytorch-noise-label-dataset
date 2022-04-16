@@ -20,6 +20,11 @@ ShowErrorLabel <-- (True/False) True can Mark your data is it is ErrorLabel
 transform <-- pytorch transform trick
 ```
 ## Describe Support Pytorch Dataset, to convert to Noise Label Dataset, and easy to train
+## Usage
+```python=
+from NoiseLabelDataset import NoiseLabelDataset
+NoiseDataset = NoiseLabelDataset(Dataset, ErrorRate=0.5, ShowErrorLabel=True)
+```
 ## Example
 * MySubset
 ```python=
@@ -38,8 +43,6 @@ TrainSet, ValidSet, TestSet = train_test_split(TempSet, TestRate=0.2, ValidRate=
 ```python=
 from NoiseLabelDataset import NoiseLabelDataset
 NoiseSet = NoiseLabelDataset(TrainSet, ErrorRate=0.5, ShowErrorLabel=True)
-for i in NoiseSet:
-  print(i)
 ```
 * Display_img
 ```python=
