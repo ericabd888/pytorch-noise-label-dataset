@@ -53,6 +53,6 @@ Display_img(NoiseSet, ClassesName=classes_name, FileLoc="noise.png", NeedSpecial
 ```
 ## Result
 * Normal Dataset
-![](https://i.imgur.com/Pjo5vTz.png)
+![](https://i.imgur.com/DAIwzeU.png)
 * Noise Dataset
-![](https://i.imgur.com/m9idgW4.png)
+![](https://i.imgur.com/RsDw9Gn.png)
