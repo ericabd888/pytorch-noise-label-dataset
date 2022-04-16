@@ -9,7 +9,7 @@ setup(
     author_email='ericabd888@gmail.com',
     license='BSD 2-clause',
     packages=['NoiseLabelDataset'],
-    install_requires=['numpy',],
+    install_requires=['numpy','torch','random','torchvision','matplotlib'],
 
     classifiers=[
         'Development Status :: 1 - Planning',
