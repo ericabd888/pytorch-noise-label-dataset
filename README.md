@@ -3,7 +3,9 @@
 ```bash=
 pip install git+https://github.com/ericabd888/pytorch-noise-label-dataset.git
 ```
-## OutLook (Using Cifar10 Dataset to show Result)
+## Describe 
+Randomly convert Pytorch normal Dataset to Noise Label Dataset, easy to train
+## QuickLook (Using Cifar10 Dataset to show Result)
 * Normal Dataset
 ![](https://i.imgur.com/DAIwzeU.png)
 * Noise Dataset
@@ -24,8 +26,7 @@ ErrorRate <-- NoiseLabel ErrorRate
 ShowErrorLabel <-- (True/False) True can Mark your data is it is ErrorLabel
 transform <-- pytorch transform trick
 ```
-## Describe 
-Convert Pytorch normal Dataset to Noise Label Dataset, easy to train
+
 ## Usage
 ```python=
 from NoiseLabelDataset import NoiseLabelDataset
