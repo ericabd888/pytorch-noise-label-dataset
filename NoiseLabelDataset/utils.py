@@ -20,7 +20,6 @@ class MySubset(Dataset):
         self.dataset = dataset
         self.indices = indices
         self.targets = []
-        print("Someting Change")
         for idx in self.indices:
             self.targets.append(dataset[idx][1])
        
