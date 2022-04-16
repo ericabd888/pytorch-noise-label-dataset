@@ -17,8 +17,6 @@ class NoiseLabelDataset(Dataset):
         DataIdx = [i for i in range(DataLen)]
         random.shuffle(DataIdx)
         self.LabelSet = set(MyData.targets)
-
-        print(self.LabelSet)
         self.transform = transform
         ErrorNumber = int(DataLen * ErrorRate)
         self.ErrorIdx = set(DataIdx[:ErrorNumber])

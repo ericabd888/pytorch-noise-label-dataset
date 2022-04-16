@@ -20,6 +20,10 @@ class MySubset(Dataset):
         self.dataset = dataset
         self.indices = indices
         self.targets = []
+        print("Subset Change")
+        for data in dataset:
+            self.targets.append(data[1])
+       
     def __getitem__(self, idx):
         image = self.dataset[self.indices[idx]][0]
         label = self.dataset[self.indices[idx]][1]
