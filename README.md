@@ -1,7 +1,7 @@
 # Noise Label Dataset
 ## Installation
 ```bash=
-pip install git+ssh://git@bitbucket.org/ericabd888/NoiseLabelDataset.git
+pip install git+https://github.com/ericabd888/NoiseLabelDataset.git
 ```
 ## Package Support
 1. NoiseLabelDataset (Create Pytorch Dataset in Partial Noise Label)
