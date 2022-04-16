@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: NoiseLabelDataset
+Version: 0.1.1
+Summary: Support Pytorch Dataset to create Noise Label Dataset to train
+Home-page: https://github.com/ericabd888/NoiseLabelDataset
+Author: YUAN-CHIH YANG
+Author-email: ericabd888@gmail.com
+License: BSD 2-clause
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3.6
+
+UNKNOWN
+
