@@ -3,7 +3,7 @@
 ```bash=
 pip install git+https://github.com/ericabd888/pytorch-noise-label-dataset.git
 ```
-## OutLook
+## OutLook (Using Cifar10 Dataset to show Result)
 * Normal Dataset
 ![](https://i.imgur.com/DAIwzeU.png)
 * Noise Dataset
