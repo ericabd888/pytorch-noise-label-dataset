@@ -20,14 +20,12 @@ class MySubset(Dataset):
         self.dataset = dataset
         self.indices = indices
         self.targets = []
-        print("Subset Change")
-        for data in dataset:
-            self.targets.append(data[1])
+        for idx in self.indices:
+            self.targets.append(dataset[idx][1])
        
     def __getitem__(self, idx):
         image = self.dataset[self.indices[idx]][0]
         label = self.dataset[self.indices[idx]][1]
-        self.targets.append(label)
         return [image, label]
     def __len__(self):
         return len(self.indices)
