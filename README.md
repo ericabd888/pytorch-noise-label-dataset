@@ -24,7 +24,8 @@ ErrorRate <-- NoiseLabel ErrorRate
 ShowErrorLabel <-- (True/False) True can Mark your data is it is ErrorLabel
 transform <-- pytorch transform trick
 ```
-## Describe Support Pytorch Dataset, to convert to Noise Label Dataset, and easy to train
+## Describe 
+Convert Pytorch normal Dataset to Noise Label Dataset, easy to train
 ## Usage
 ```python=
 from NoiseLabelDataset import NoiseLabelDataset
