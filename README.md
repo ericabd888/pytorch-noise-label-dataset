@@ -6,9 +6,9 @@ pip install git+https://github.com/ericabd888/pytorch-noise-label-dataset.git
 ## Describe 
 Randomly convert Pytorch normal Dataset to Noise Label Dataset, easy to train
 ## QuickLook (Using Cifar10 Dataset to show Result)
-* Normal Dataset
+### Normal Dataset
 ![](https://i.imgur.com/DAIwzeU.png)
-* Noise Dataset
+### Noise Dataset
 ![](https://i.imgur.com/RsDw9Gn.png)
 ## Package Support
 1. NoiseLabelDataset (Create Pytorch Dataset in Partial Noise Label)
@@ -33,7 +33,7 @@ from NoiseLabelDataset import NoiseLabelDataset
 NoiseDataset = NoiseLabelDataset(Dataset, ErrorRate=0.5, ShowErrorLabel=True)
 ```
 ## Example
-* MySubset
+### MySubset
 ```python=
 from NoiseLabelDataset import MySubset
 import torchvision
@@ -42,18 +42,17 @@ Dataset = torchvision.datasets.CIFAR10(root='data', train=True, download=True)
 TempSet = MySubset(Dataset, [i for i in range(15)])
 print(TempSet.targets)
 ```
-* train_test_split
+### train_test_split
 ```python=
 TrainSet, ValidSet, TestSet = train_test_split(TempSet, TestRate=0.2, ValidRate=0.2)
 ```
-* NoiseLabelDataset
+### NoiseLabelDataset
 ```python=
 from NoiseLabelDataset import NoiseLabelDataset
 NoiseSet = NoiseLabelDataset(TrainSet, ErrorRate=0.5, ShowErrorLabel=True)
 ```
-* Display_img
+### Display_img(Use Display_img to show the different between Normal and Noise Dataset)
 ```python=
-# Use Display_img to show the different between Normal and Noise Dataset
 from NoiseLabelDataset import Display_img
 classes_name = classes_name = ['airplane', 'automobile', 'bird', 'cat', 'deer', 
 'dog', 'frog', 'horse', 'ship', 'truck']
