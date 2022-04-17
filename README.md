@@ -1,4 +1,4 @@
-# Noise Label Dataset
+# Pytorch Noise Label Dataset
 ## Installation
 ```bash=
 pip install git+https://github.com/ericabd888/pytorch-noise-label-dataset.git
