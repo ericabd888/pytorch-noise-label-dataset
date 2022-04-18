@@ -1,7 +1,4 @@
----
-title: This is a post with default layout
-layout: default
----
+
 # Pytorch Noise Label Dataset
 ## Installation
 ```bash=
