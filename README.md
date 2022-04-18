@@ -1,3 +1,6 @@
+---
+layout: default
+---
 # Pytorch Noise Label Dataset
 ## Installation
 ```bash=
