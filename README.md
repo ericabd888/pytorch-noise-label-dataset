@@ -17,6 +17,7 @@ Randomly convert Pytorch normal Dataset to Noise Label Dataset, easy to train
 3. Display_img (display your dataset picture)
 4. MySubset (Support Data.targets to see all your label)
 ## Args
+
 ```python=
 def __init__(self, MyData, xtype=None, ytype=None, ErrorRate=0.2, ShowErrorLabel=False, transform=None): 
 
@@ -29,12 +30,14 @@ transform <-- pytorch transform trick
 ```
 
 ## Usage
+
 ```python=
 from NoiseLabelDataset import NoiseLabelDataset
 NoiseDataset = NoiseLabelDataset(Dataset, ErrorRate=0.5, ShowErrorLabel=True)
 ```
 ## Example
 ### MySubset
+
 ```python=
 from NoiseLabelDataset import MySubset
 import torchvision
@@ -44,15 +47,18 @@ TempSet = MySubset(Dataset, [i for i in range(15)])
 print(TempSet.targets)
 ```
 ### train_test_split
+
 ```python=
 TrainSet, ValidSet, TestSet = train_test_split(TempSet, TestRate=0.2, ValidRate=0.2)
 ```
 ### NoiseLabelDataset
+
 ```python=
 from NoiseLabelDataset import NoiseLabelDataset
 NoiseSet = NoiseLabelDataset(TrainSet, ErrorRate=0.5, ShowErrorLabel=True)
 ```
 ### Display_img(Use Display_img to show the different between Normal and Noise Dataset)
+
 ```python=
 from NoiseLabelDataset import Display_img
 classes_name = classes_name = ['airplane', 'automobile', 'bird', 'cat', 'deer', 
