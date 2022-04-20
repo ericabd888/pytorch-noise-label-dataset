@@ -1,6 +1,6 @@
 
 # Pytorch Noise Label Dataset
-## [HOME PAGE]("https://ericabd888.github.io/pytorch-noise-label-dataset/"){:target="_blank" rel="noopener"}
+## [HOME PAGE](https://ericabd888.github.io/pytorch-noise-label-dataset/){:target="_blank"}
 ## Installation
 ```bash=
 pip install git+https://github.com/ericabd888/pytorch-noise-label-dataset.git
