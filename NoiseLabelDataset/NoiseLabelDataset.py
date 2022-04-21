@@ -14,9 +14,13 @@ class NoiseLabelDataset(Dataset):
         self.xtype = xtype
         self.ytype = ytype
         self.ShowErrorL = ShowErrorLabel
+        self.ErrorRate = ErrorRate
+        self.transform = transform
+        
         DataLen = len(MyData)
         DataIdx = [i for i in range(DataLen)]
         random.shuffle(DataIdx)
+        
         # Use Set to get random Label
         if MyData.targets:
             self.LabelSet = set(MyData.targets)
@@ -24,7 +28,7 @@ class NoiseLabelDataset(Dataset):
             self.LabelSet = set()
             for data in MyData:
                 self.LabelSet.add(data[1])
-        self.transform = transform
+        
         ErrorNumber = int(DataLen * ErrorRate)
         self.ErrorIdx = set(DataIdx[:ErrorNumber])
         self.MyData = MyData
@@ -33,10 +37,10 @@ class NoiseLabelDataset(Dataset):
         x, y = self.MyData[index]
         if self.ShowErrorL:
             ErrorLabel = False
-        if ErrorRate > 0 and (index in self.ErrorIdx):
+        if self.ErrorRate > 0 and (index in self.ErrorIdx):
             CurrentNum = y
             self.LabelSet.remove(CurrentNum)
-            DeleteNum = random.choice(list(self.LabelSet))
+            DeleteNum = random.choice(tuple(self.LabelSet))
             y = DeleteNum
             ErrorLabel = True
             self.LabelSet.add(CurrentNum)
