@@ -29,6 +29,8 @@ class NoiseLabelDataset(Dataset):
             for data in MyData:
                 self.LabelSet.add(data[1])
         
+        assert (len(self.LabelSet) != 0), "Please Make Sure Your Dataset Have Enough Label."
+        
         ErrorNumber = int(DataLen * ErrorRate)
         self.ErrorIdx = set(DataIdx[:ErrorNumber])
         self.MyData = MyData
