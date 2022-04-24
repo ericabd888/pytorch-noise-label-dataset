@@ -9,14 +9,14 @@ import matplotlib.pyplot as plt
 from .utils import MySubset, train_test_split, Display_img
 classes_name = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
 class NoiseLabelDataset(Dataset):
-    def __init__(self, MyData, xtype=None, ytype=None, ErrorRate=0.2, ShowErrorLabel=False, transform=None):  
+    def __init__(self, MyData, xtype=None, ytype=None, ErrorRate=0.2, ShowErrorLabel=False, transform=None, SoftRandom=True):  
         # Initialize Settings
         self.xtype = xtype
         self.ytype = ytype
         self.ShowErrorL = ShowErrorLabel
         self.ErrorRate = ErrorRate
         self.transform = transform
-        
+        self.SoftRandom = SoftRandom
         DataLen = len(MyData)
         DataIdx = [i for i in range(DataLen)]
         random.shuffle(DataIdx)
@@ -37,15 +37,23 @@ class NoiseLabelDataset(Dataset):
         
     def __getitem__(self, index):
         x, y = self.MyData[index]
+        ChangeLabelRate = np.random.uniform(0, 1, 1)
         if self.ShowErrorL:
             ErrorLabel = False
-        if self.ErrorRate > 0 and (index in self.ErrorIdx):
-            CurrentNum = y
-            self.LabelSet.remove(CurrentNum)
-            DeleteNum = random.choice(tuple(self.LabelSet))
-            y = DeleteNum
-            ErrorLabel = True
-            self.LabelSet.add(CurrentNum)
+        if self.SoftRandom:
+            if self.ErrorRate <= ChangeLabelRate:
+                CurrentNum = y
+                NewErrorLabel = random.choice(tuple(self.LabelSet))
+                y = NewErrorLabel
+                ErrorLabel = (CurrentNum != NewErrorLabel)            
+        else:
+            if self.ErrorRate > 0 and (index in self.ErrorIdx):
+                CurrentNum = y
+                self.LabelSet.remove(CurrentNum)
+                DeleteNum = random.choice(tuple(self.LabelSet))
+                y = DeleteNum
+                ErrorLabel = True
+                self.LabelSet.add(CurrentNum)
         if self.xtype:
             x = x.type(xtype)
         if self.ytype:
