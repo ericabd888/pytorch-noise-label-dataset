@@ -41,7 +41,7 @@ class NoiseLabelDataset(Dataset):
         if self.ShowErrorL:
             ErrorLabel = False
         if self.SoftRandom:
-            if self.ErrorRate <= ChangeLabelRate:
+            if self.ErrorRate > ChangeLabelRate:
                 CurrentNum = y
                 NewErrorLabel = random.choice(tuple(self.LabelSet))
                 y = NewErrorLabel
