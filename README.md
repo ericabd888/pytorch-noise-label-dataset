@@ -19,8 +19,8 @@ Randomly convert Pytorch normal Dataset to Noise Label Dataset, easy to train
 4. MySubset (Support Data.targets to see all your label)
 ## Args
 
-```python=
-def __init__(self, MyData, xtype=None, ytype=None, ErrorRate=0.2, ShowErrorLabel=False, transform=None): 
+```python
+def __init__(self, MyData, xtype=None, ytype=None, ErrorRate=0.2, ShowErrorLabel=False, transform=None, SoftRandom=True): 
 
 MyData <-- Pytorch Dataset obj
 xtype <-- Your X Data type
@@ -28,18 +28,19 @@ ytype <-- Your Y Data type
 ErrorRate <-- NoiseLabel ErrorRate
 ShowErrorLabel <-- (True/False) True can Mark your data is it is ErrorLabel
 transform <-- pytorch transform trick
+SoftRandom <-- Accept Duplicate Label
 ```
 
 ## Usage
 
-```python=
+```python
 from NoiseLabelDataset import NoiseLabelDataset
 NoiseDataset = NoiseLabelDataset(Dataset, ErrorRate=0.5, ShowErrorLabel=True)
 ```
 ## Example
 ### MySubset
 
-```python=
+```python
 from NoiseLabelDataset import MySubset
 import torchvision
 Dataset = torchvision.datasets.CIFAR10(root='data', train=True, download=True)
