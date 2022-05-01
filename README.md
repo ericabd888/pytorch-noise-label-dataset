@@ -50,18 +50,18 @@ print(TempSet.targets)
 ```
 ### train_test_split
 
-```python=
+```python
 TrainSet, ValidSet, TestSet = train_test_split(TempSet, TestRate=0.2, ValidRate=0.2)
 ```
 ### NoiseLabelDataset
 
-```python=
+```python
 from NoiseLabelDataset import NoiseLabelDataset
 NoiseSet = NoiseLabelDataset(TrainSet, ErrorRate=0.5, ShowErrorLabel=True)
 ```
 ### Display_img(Use Display_img to show the different between Normal and Noise Dataset)
 
-```python=
+```python
 from NoiseLabelDataset import Display_img
 classes_name = classes_name = ['airplane', 'automobile', 'bird', 'cat', 'deer', 
 'dog', 'frog', 'horse', 'ship', 'truck']
